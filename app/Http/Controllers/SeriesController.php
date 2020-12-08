@@ -45,12 +45,7 @@ class SeriesController extends Controller
                 'mensagem',"Serie {$serie->nome} criada com sucesso"
             );
 
-      //echo "Série com id {$serie->id} criada: {$serie->nome}";
        return redirect('/series');
-
-      /*$serie = new Serie();
-        $serie->nome = $nome;
-        $serie->save();*/
     }
 
     public function destroy(Request $request){

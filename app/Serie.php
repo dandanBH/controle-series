@@ -8,7 +8,7 @@ class Serie extends Model
 {
     public $timestamps = false;
     protected $table = 'serie';
-    protected $fillable = ['nome'];
+    protected $fillable = ['nome']; //campos atribuidos em massa
 
     //as relacoes do laravel sao feitas por metodos
     //relacao serie x temporadas
