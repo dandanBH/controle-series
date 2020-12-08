@@ -14,7 +14,12 @@ class CreateEpisodiosTable extends Migration
     {
         Schema::create('episodios', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('numero');
+            $table->integer('temporada_id')->unsigned();
+            $table->foreign('temporada_id')
+            ->references('id')
+            ->on('temporadas')
+            ->onDelete('cascade'); 
         });
     }
 
