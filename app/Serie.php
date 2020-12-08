@@ -13,6 +13,6 @@ class Serie extends Model
     //as relacoes do laravel sao feitas por metodos
     //relacao serie x temporadas
     public function temporadas(){
-        return $this->hasMany(Temporada::class, 'idSerie', 'id');
+        return $this->hasMany(Temporada::class, 'serie_id', 'id');
     }
 }
