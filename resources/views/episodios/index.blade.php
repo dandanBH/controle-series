@@ -6,6 +6,11 @@
 
 @section('conteudo')
 
+@if(!empty($mensagem))
+<div class="class alert alert-success">
+  {{$mensagem}} 
+  </div>
+@endif
 
 <form action="/temporadas/{{$temporadaId}}/episodios/assistir" method="post">
 {{ csrf_field() }}
