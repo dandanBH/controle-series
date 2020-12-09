@@ -25,7 +25,7 @@
                     <button class="btn btn-primary" onclick="editarSerie({{$serie->id}})">
                         <i class="fas fa-check"></i>
                     </button>
-                    
+                    {{ csrf_field() }}
                 </div>
             </div>
 
@@ -63,7 +63,27 @@
             }else {
                 inputSerieEl.removeAttribute('hidden');
                 nomeSerieEl.hidden = true;
+            }
         }
+
+        function editarSerie(serieId){
+            let formData = new FormData();
+           const nome =  document
+           .querySelector(`#input-nome-serie-${serieId} > input`)
+           .value; // pegue o input filho que tenha o id  #input-nome-serie-${serieId}
+           const token = document.querySelector('input[name="_token"]').value;
+          
+           formData.append('nome',nome);
+           formData.append('_token',token);
+
+           const url = `/series/${serieId}/editaNome`;
+           fetch(url,{
+                body: formData,
+                method: 'POST'
+           }).then(()=> {
+                toggleInput(serieId);
+                document.getElementById(`nome-serie-${serieId}`).textContent = nome;
+           });
         }
     </script>
 @endsection
