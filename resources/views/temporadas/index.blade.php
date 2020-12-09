@@ -13,7 +13,7 @@
                     Temporada {{$temporada->numero}}
                 </a>
                 <span class="badge badge-secondary">
-                    0/{{$temporada->episodios->count()}}  <!--{{$temporada->episodios}}  exibe todas as propriedades-->
+                    {{ $temporada->getEpisodiosAssistidos()->count() }}/{{$temporada->episodios->count()}}  <!--{{$temporada->episodios}}  exibe todas as propriedades-->
                 </span>
 
             </li>
