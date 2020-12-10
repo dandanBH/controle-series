@@ -15,6 +15,11 @@ use App\Http\Requests\SeriesFormRequest;
 
 class SeriesController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function listarSeries(Request $request) {
 
        //$serie = Serie::all();
