@@ -16,7 +16,7 @@
 @endif
 
 
-<form method="post">
+<form method="post" action="/registrar">
     {{ csrf_field() }}
         <div class="form-group">
             <label for="email">E-mail</label>

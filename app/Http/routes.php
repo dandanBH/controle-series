@@ -20,3 +20,6 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/entrar','EntrarController@index');
 Route::post('/entrar','EntrarController@entrar');
+
+Route::get('/registrar','RegistroController@create');
+Route::post('/registrar','RegistroController@store');
